@@ -34,6 +34,17 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # -----------
 
+# Install asp.net core 6
+ RUN sudo apt-get update
+ RUN sudo apt-get install -y apt-transport-https
+ RUN sudo apt-get update
+ RUN sudo apt-get install -y dotnet-sdk-6.0
+ RUN sudo apt-get install -y aspnetcore-runtime-6.0
+ 
+ # Install NodeJS
+RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
+RUN sudo apt-get install -y nodejs
+
 # Port
 ENV PORT=8080
 
