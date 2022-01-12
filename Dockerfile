@@ -35,6 +35,8 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # -----------
 
 # Install asp.net core 6
+RUN wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+RUN sudo dpkg -i packages-microsoft-prod.deb
  RUN sudo apt-get update
  RUN sudo apt-get install -y apt-transport-https
  RUN sudo apt-get update
